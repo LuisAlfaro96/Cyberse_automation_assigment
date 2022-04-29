@@ -34,6 +34,13 @@ Once you have the repo cloned you can start building the Docker image with the c
 ```bash
 docker build -t project .
 ```
+## Email feature configuration
+Depending on your email provider(tested on Gmail) and configuration, we would need to turn off some security aspects (MF2 and Access to Less secure Apps), this could be done following the documentation presented
+* **TURN OFF MF2** : Check the following [documentation]() to complete this.
+
+* **Dockerfile** : Dockerfile used to create the image of the project.
+
+Please make sure to update tests as appropriate.
 
 ## Running the Container
 
@@ -53,10 +60,7 @@ foobar.pluralize('goose')
 foobar.singularize('phenomena')
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
