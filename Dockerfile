@@ -12,7 +12,7 @@ RUN pip3 install requests && \
 RUN apt-get update  && \
     apt-get install nano
 RUN chmod 0777 /data.py
-RUN chmod 0777 /test.py
+
 RUN chmod 0777 /project_env.sh
 
 

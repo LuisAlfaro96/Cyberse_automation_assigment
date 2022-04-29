@@ -16,17 +16,17 @@ from yaml.loader import SafeLoader
 import logging
 
 
-#sender_email = os.environ['SENDER_EMAIL']
-#receiver_email = os.environ['RECEIVER_EMAIL']
-#sender_password = os.environ['SENDER_PASSWORD']
+sender_email = os.environ['SENDER_EMAIL']
+receiver_email = os.environ['RECEIVER_EMAIL']
+sender_password = os.environ['SENDER_PASSWORD']
 print ("    +++ Starting the script +++")
 print("\n")
-name_file2 = 'domain_data/updated_info.json' #care with the path
+name_file2 = '/domain_data/updated_info.json' #care with the path
 send_alert_flag = 0
 
 
 # Open the file and load the file
-with open('domains.yml') as f: #care with the path
+with open('/domains.yml') as f: #care with the path
     data = yaml.load(f, Loader=SafeLoader)
     #print(len(data['domains']))
     all_domains = data['domains']
@@ -48,7 +48,7 @@ with open('domains.yml') as f: #care with the path
         
         #print(todays_data)
       
-        name_file = 'domain_data/' + domain + "_data.json" #care with the path
+        name_file = '/domain_data/' + domain + "_data.json" #care with the path
         
         if os.path.isfile(name_file): #compare if the file already exist, this if because could be the posibility that the script its running for its first time
             print("+ Comparing the new data with yersterday data...")
@@ -126,12 +126,12 @@ if send_alert_flag == 1:
 ###sending the email
     print("\n")
     print("+ Sending Alert via EMAIL")
-    contacts = ['alfaro.13.luis@gmail.com']
+    contacts = [sender_email]
 
     msg = EmailMessage()
     msg['Subject'] = 'ALERT! - NEW SERVER INFO HAS APPEARED'
-    msg['From'] = 'alfaro.13.luis@gmail.com'
-    msg['To'] = 'alfaro.13.luis@gmail.com'
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
 
     msg.set_content('You can find more information about the domain info that has been updated in the file attached')
     files = [name_file2]
@@ -142,7 +142,7 @@ if send_alert_flag == 1:
         msg.add_attachment(file_data,maintype='application', subtype ='octet-stream', filename=file_name)
     
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login('alfaro.13.luis@gmail.com', 'madestiktrolo1')
+        smtp.login(sender_email, sender_password)
         smtp.send_message(msg)
 
     if os.path.exists(name_file2): #
