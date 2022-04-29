@@ -11,9 +11,9 @@ The project consists of a few files and folders for the following purpose
 
 * **domain_data** : Folder where the data related to the domains's results will be stored.
 
-* **Dockerfile ** : Dockerfile used to create the image of the project.
+* **Dockerfile** : Dockerfile used to create the image of the project.
 
-* **crontab **: Contrab file used to configured the scheduling of the  data.py script.
+* **crontab**: Contrab file used to configured the scheduling of the  data.py script.
 
 * **data.py** : Python file develop to interact with the Domaintool API and the files within the Domain_Data folder.
 
