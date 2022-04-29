@@ -1,0 +1,1 @@
+* * * * * . /environment; /usr/bin/python3 /data.py >> /var/log/cron.log

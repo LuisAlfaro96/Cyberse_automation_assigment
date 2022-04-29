@@ -3,7 +3,8 @@ import os
 import json
 import requests
 import re
-
+#docker container run --env SENDER_EMAIL=test1 --env RECEIVER_EMAIL=test2  --env SENDER_PASSWORD=test3 test11:latest 
+#docker container exec -it c2aa2299cc3c /bin/bash
 import sys
 
 import yaml
@@ -19,7 +20,7 @@ sender_password = os.environ['SENDER_PASSWORD']
 
 
 # Open the file and load the file
-with open('domains.yml') as f:
+with open('/domains.yml') as f:
     data = yaml.load(f, Loader=SafeLoader)
     print(len(data['domains']))
     all_domains = data['domains']
@@ -41,8 +42,8 @@ with open('domains.yml') as f:
         
         print(value)
       
-        name_file = 'domain_data/' + domain + "_data.json"
-        name_file2 = 'domain_data/updated_info.json'
+        name_file = '/domain_data/' + domain + "_data.json"
+        name_file2 = '/domain_data/updated_info.json'
         if os.path.isfile(name_file):
             print("The file already exists")
     
@@ -83,9 +84,10 @@ with open('domains.yml') as f:
                                     data_updated['Domain'] = domain
                                     array = []
                                     array.append(data_updated)
-                                    #array.append({'Domain': domain})
+                                    array.append({'Domain': domain})
                                     json.dump(array, outfile)
                         else:
+                            data23 = 3
                             print("doing nothing")  
                                     
                 
