@@ -41,7 +41,7 @@ Once you have the image already created you can proceed to run the container wit
 ```bash
 docker container run --env SENDER_EMAIL=your@email.com --env RECEIVER_EMAIL=your@email.com  --env SENDER_PASSWORD=yourpassoword project:latest 
 ```
-if your email account has MF2 activated could be better to disable it just for the matter of testing.
+if your email account has MFA activated could be better to disable it just for the matter of testing.
 
 # returns 'words'
 foobar.pluralize('word')
