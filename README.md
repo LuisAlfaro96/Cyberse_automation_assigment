@@ -118,7 +118,7 @@ To possible scenarios could appear
 
 
 # Crontab interaction
-For the automation part, since the script should be executed programatically every 24 hours, i used crontab to achieve that, /enviroment are the enviroment variables that you enter once the docker container is deployed, those are the credentials for your email that then the script will use to send the email, and the /var/log/cron.log will send the output of the script to the crontab log environment.
+For the automation part, since the script should be executed programatically every 24 hours, i used crontab to achieve that, /enviroment is the file where the output of the project_env.sh is stored,this bash file is executed in order to export all the environment variables so crontab would be able to understand all of those values,  so once the docker container is deployed, the sender and receiver could be variable,  the /var/log/cron.log will send the output of the script to the crontab log environment and that is the location where my Docker container will be reading for changes.
 ```crontab
 * * * * * . /environment; /usr/bin/python3 /data.py >> /var/log/cron.log
 ```
