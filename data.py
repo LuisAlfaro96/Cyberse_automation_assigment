@@ -70,7 +70,7 @@ with open('/domains.yml') as f: #care with the path
             
                         #print(yesterday_data[key])
                         
-                        print("+ Checing value: "+key)
+                        print("+ Checking value: "+key)
                         if todays_data[key] != yesterday_data[key]: #we are capturing the value that has been modified
                             print("+ New server info has been found for the Domain: " +domain+ " on value: "+ key)
                             
