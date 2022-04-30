@@ -32,7 +32,7 @@ Depending on your email provider(tested on Gmail) and configuration, we would ne
 
 * **Less Secure Apps** : You would need to activate the [Less Secure Apps](https://www.google.com/settings/security/lesssecureapps) for your gmail account, in order to comunicate with the script
 
-or you can use a test Email provider.
+or you can use a temp Email provider.
 
 ## Building the Image
 You can clone the repo and check for your Docker engine versione, the project was develop using Docker version 20.10.14, you can check that using
