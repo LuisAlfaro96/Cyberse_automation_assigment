@@ -3,7 +3,7 @@
 The objective with this assigment was to develop a script that captures the data using a DomainTool API tool, domain names will be passed through a yaml file, 
 the information will be saved and compared with the previous day's data to see if any of its data changed, if so, 
 the changes will be saved in a json file (name of the) which at the time of its creation will be sent by mail. 
-For this exercise we are going to analyse the CRETED EXPIRES and UPDATED attributes of the domains described in the file.
+For this exercise we are going to analyse the CREATED EXPIRES and UPDATED attributes of the domains described in the file.
 
 
 ## Structure of the project
