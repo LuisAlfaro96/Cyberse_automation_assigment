@@ -63,7 +63,7 @@ To possible scenarios could appear
 + Getting info for Domain: DailyChanges.com
 + Executing Get request: https://api.domaintools.com/v1/DailyChanges.com/whois/
 + Comparing the new data with yersterday data...
-+ Checing value: created
++ Checking value: created
 + New server info has been found for the Domain: DailyChanges.com on value: created
 
 
@@ -72,9 +72,9 @@ To possible scenarios could appear
 
 + Creating file/domain_data/updated_info.json
 + Writting the data into: /domain_data/updated_info.json
-+ Checing value: expires
++ Checking value: expires
 + Same value, nothings has changed
-+ Checing value: updated
++ Checking value: updated
 + Same value, nothings has changed
 + Getting info for Domain: DomainTools.com
 + Executing Get request: https://api.domaintools.com/v1/DomainTools.com/whois/
