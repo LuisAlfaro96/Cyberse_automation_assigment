@@ -5,6 +5,7 @@ the information will be saved and compared with the previous day's data to see i
 the changes will be saved in a json file (name of the) which at the time of its creation will be sent by mail. 
 For this exercise we are going to analyse the CRETED EXPIRES and UPDATED attributes of the domains described in the file.
 
+
 ## Structure of the project
 The project consists of a few files and folders for the following purpose
 ![image](https://user-images.githubusercontent.com/8351858/165890299-23852d24-6cb9-4f9e-a17e-1864f38e230a.png)
@@ -20,6 +21,10 @@ The project consists of a few files and folders for the following purpose
 * **domains.yml** : Store all the domains which their data will be requested.
 
 * **project_env.sh** : Bash script used in order to Crontab understand the enviroment variables we will use in the docker run command.
+
+## General Overview
+
+The brain of the project is located in the data.py which is the script who is in charge of the GET request for all the domains located in the domains.yml, for that particular request I used a Domaintool API in order to get domains's information, this was using the [requests](https://docs.python-requests.org/en/latest/) module for python, now that we have the data to compare, we would need to manipulate this in a better format to make the corresponding validation, we [json](https://docs.python.org/3/library/json.html) module its a correct way to work the API's results (json data), now we are now able to access, filter and compare values within our json output(since the json modules transfor that into a dictionary), I used json files to store the data extracted by our GET request for each of the domains(there are munch of other solutions to complete this, this is definitely not the most efficient approach), then I played with the json values in order to compare based on older values (that the script its supposed to compare reading from the corresponding json file related to the corresponding domain), so once the script has read all the domains and has made all the validations, depending if a value has been modified from the last script execution
 
 ## Gmail feature configuration
 Depending on your email provider(tested on Gmail) and configuration, we would need to turn off some security aspects (MF2 and Access to Less secure Apps), this could be done following the documentation presented
